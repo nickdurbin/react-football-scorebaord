@@ -7,9 +7,14 @@ import { useState } from "react";
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
+  // Home and Away Team useState variables
   const [steelersScore, awayTeam] = useState(0);
   const [brownsScore, homeTeam] = useState(0);
+
+  // Setting up more buton functionality for the quarter
   const [quarterNumber, changeQuarter] = useState(1);
+
+  // Require and Style the background image
   const brownsImg = require('../src/Browns.jpg');
   const backgroundStyle = {
     width: '100%',

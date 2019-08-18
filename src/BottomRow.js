@@ -4,6 +4,7 @@ import "./App.css";
 
 const BottomRow = () => {
 
+  // generic variable for quarter till figure out how to pass state
   const [quarterNumber, changeQuarter] = useState(2);
 
   return (

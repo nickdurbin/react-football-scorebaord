@@ -3,9 +3,13 @@
   --white: #FFFFFF;
 }
 
+.container {
+  padding: 5rem 0;;
+}
+
 .scoreboard {
   width: 58%;
-  margin: 12rem auto;
+  margin: 8rem auto;
   background-color: #f77b08;
   color: white;
   opacity: 0.8;
