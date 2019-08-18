@@ -4,7 +4,7 @@ import "./App.css";
 
 const BottomRow = () => {
 
-  const [quarterNumber, changeQuarter] = useState(1);
+  const [quarterNumber, changeQuarter] = useState(2);
 
   return (
     <div className="bottomRow">
