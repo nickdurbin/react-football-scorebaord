@@ -3,7 +3,6 @@ import React from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 import { useState } from "react";
-import "./BottomRow";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
@@ -20,8 +19,7 @@ function App() {
   };
 
   return (
-    <div className="background" style={ backgroundStyle }>
-    <div className="container">
+    <div className="container" style={ backgroundStyle }>
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
@@ -31,7 +29,7 @@ function App() {
 
             <div className="home__score">{ brownsScore }</div>
           </div>
-          <div className="timer">08:46</div>
+          <div className="timer">01:46</div>
           <div className="away">
             <h2 className="away__name">Steelers</h2>
             <div className="away__score">{ steelersScore }</div>
@@ -43,7 +41,7 @@ function App() {
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={() => homeTeam(brownsScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
-          <button onClick={() => homeTeam(steelersScore + 3) } className="homeButtons__fieldGoal">Home Field Goal</button>
+          <button onClick={() => homeTeam(brownsScore + 3) } className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
           <button onClick={() => awayTeam(steelersScore + 7) } className="awayButtons__touchdown">Away Touchdown</button>
@@ -55,7 +53,6 @@ function App() {
           <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
         </div>
       </section>
-    </div>
     </div>
   );
 }
