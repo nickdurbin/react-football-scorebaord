@@ -1,6 +1,6 @@
 :root {
   --black: #0d0d0d;
-  --red: #ff2d2b;
+  --white: #FFFFFF;
 }
 
 .scoreboard {
@@ -8,6 +8,7 @@
   margin: 10rem auto;
   background-color: #0b5402;
   color: white;
+  opacity: 0.8;
   border-radius: 0.5rem;
   margin-top: 10rem;
   padding: 5rem;
@@ -34,11 +35,11 @@
 }
 
 .home {
-  background-color: #656565;
+  background-color: #f77b08;
 }
 
 .away {
-  background-color: #af750a;
+  background-color: #e7f708;
 }
 
 .home__name,
@@ -113,6 +114,7 @@
   justify-content: space-around;
 }
 
+.newGame, .newQuarter,
 .homeButtons__touchdown,
 .homeButtons__fieldGoal,
 .awayButtons__touchdown,
