@@ -1,9 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const BottomRow = () => {
-
-  const rowVariables = [quarterNumber, downNumber]
+const BottomRow = ({ quarterNumber, downNumber }) => {
 
   // generic variable for quarter till figure out how to pass state
   return (
@@ -22,7 +20,7 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">{ quarterNumber }</div>
+            <div className="quarter__value">{ quarterNumber }</div>
       </div>
     </div>
   );

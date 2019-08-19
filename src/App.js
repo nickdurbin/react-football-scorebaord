@@ -8,10 +8,9 @@ function App() {
   const [brownsScore, homeTeam] = useState(0);
   const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore));
 
-  // Setting up more button functionality for the quarter
-  const changeQuarters = [quarterNumber, changeQuarter] = useState(1);
-  const changeDowns = [downNumber, changeDown] = useState(1);
-
+  // // Setting up more button functionality for the quarter and down
+  const [quarterNumber, changeQuarter] = useState(1);
+  const [downNumber, changeDown] = useState(1);
 
   // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
@@ -36,7 +35,7 @@ function App() {
             <div className="away__score">{ steelersScore }</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow quarterNumber='1' downNumber='1' />
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -49,8 +48,8 @@ function App() {
         </div>
         <div className="otherButtons">
           <button className="newGame" onClick={() => resetScore() }>New Game</button>
-          <button className="newQuarter" onClick={() => changeQuarter(quarterNumber <= 4 ? true + 1 : quarterNumber) }>Quarter</button>
-          <button className="newDown" onClick={() => changeDown(downNumber <= 4 ? true + 1 : downNumber) }>Downs</button>
+          <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
+          <button className="newDown" onClick={() => changeDown(downNumber + 1) }>Downs</button>
         </div>
       </section>
     </div>
