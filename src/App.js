@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
-import { useState } from "react";
 
 function App() {
   // Home and Away Team useState variables
@@ -10,7 +9,9 @@ function App() {
   const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore));
 
   // Setting up more button functionality for the quarter
-  const [quarterNumber, changeQuarter] = useState(1);
+  const changeQuarters = [quarterNumber, changeQuarter] = useState(1);
+  const changeDowns = [downNumber, changeDown] = useState(1);
+
 
   // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
@@ -48,7 +49,8 @@ function App() {
         </div>
         <div className="otherButtons">
           <button className="newGame" onClick={() => resetScore() }>New Game</button>
-          <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
+          <button className="newQuarter" onClick={() => changeQuarter(quarterNumber <= 4 ? true + 1 : quarterNumber) }>Quarter</button>
+          <button className="newDown" onClick={() => changeDown(downNumber <= 4 ? true + 1 : downNumber) }>Downs</button>
         </div>
       </section>
     </div>
