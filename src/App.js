@@ -1,20 +1,17 @@
-//TODO: STEP 1 - Import the useState hook.
 import React from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 import { useState } from "react";
 
 function App() {
-  //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-
   // Home and Away Team useState variables
   const [steelersScore, awayTeam] = useState(0);
   const [brownsScore, homeTeam] = useState(0);
 
-  // Setting up more buton functionality for the quarter
+  // Setting up more button functionality for the quarter
   const [quarterNumber, changeQuarter] = useState(1);
 
-  // Require and Style the background image
+  // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
   const backgroundStyle = {
     width: '100%',
@@ -29,9 +26,6 @@ function App() {
         <div className="topRow">
           <div className="home">
             <h2 className="home__name">Browns</h2>
-
-            {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
-
             <div className="home__score">{ brownsScore }</div>
           </div>
           <div className="timer">01:46</div>
@@ -44,7 +38,6 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={() => homeTeam(brownsScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
           <button onClick={() => homeTeam(brownsScore + 3) } className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
