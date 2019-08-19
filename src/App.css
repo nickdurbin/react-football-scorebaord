@@ -111,7 +111,7 @@
   border: 1px solid white;
 }
 
-.buttons {
+.buttons, .otherButtons {
   width: 50%;
   margin: 0 auto;
   display: flex;

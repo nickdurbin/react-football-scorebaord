@@ -6,11 +6,13 @@ function App() {
   // Home and Away Team useState variables
   const [steelersScore, awayTeam] = useState(0);
   const [brownsScore, homeTeam] = useState(0);
-  const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore)+ changeDown(downNumber - downNumber + 1) + changeQuarter(quarterNumber - quarterNumber + 1));
+  const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore) + changeDown(downNumber - downNumber + 1) + changeQuarter(quarterNumber - quarterNumber + 1) + changeToGo(toGoNumber - toGoNumber + 10) + changeBallOn(ballOnNumber - ballOnNumber + 20));
 
-  // // Setting up more button functionality for the quarter and down
+  // // Setting up more button functionality for the BottowRow components
   const [quarterNumber, changeQuarter] = useState(1);
   const [downNumber, changeDown] = useState(1);
+  const [toGoNumber, changeToGo] = useState(10);
+  const [ballOnNumber, changeBallOn] = useState(20);
 
   // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
@@ -35,7 +37,7 @@ function App() {
             <div className="away__score">{ steelersScore }</div>
           </div>
         </div>
-        <BottomRow quarterNumber={quarterNumber} downNumber={downNumber} />
+        <BottomRow quarterNumber={quarterNumber} downNumber={downNumber} toGoNumber={toGoNumber} ballOnNumber={ballOnNumber} />
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -49,7 +51,9 @@ function App() {
         <div className="otherButtons">
           <button className="newGame" onClick={() => resetScore() }>New Game</button>
           <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
-          <button className="newDown" onClick={() => changeDown(downNumber + 1) }>Downs</button>
+          <button className="newDown" onClick={() => changeDown(downNumber + 1) }>Down</button>
+          <button className="toGo" onClick={() => changeToGo(toGoNumber + 1) }>To Go</button>
+          <button className="ballOn" onClick={() => changeBallOn(ballOnNumber + 1) }>Ball On</button>
         </div>
       </section>
     </div>
