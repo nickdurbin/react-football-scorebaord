@@ -111,14 +111,16 @@
   border: 1px solid white;
 }
 
-.buttons, .otherButtons {
+.buttons 
+{
   width: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
 }
 
-.newGame, .newQuarter,
+.newGame, .newQuarter, 
+.newDown, .toGo, .ball,
 .homeButtons__touchdown,
 .homeButtons__fieldGoal,
 .awayButtons__touchdown,

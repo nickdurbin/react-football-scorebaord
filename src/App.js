@@ -53,7 +53,7 @@ function App() {
           <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
           <button className="newDown" onClick={() => changeDown(downNumber + 1) }>Down</button>
           <button className="toGo" onClick={() => changeToGo(toGoNumber + 1) }>To Go</button>
-          <button className="ballOn" onClick={() => changeBallOn(ballOnNumber + 1) }>Ball On</button>
+          <button className="ball" onClick={() => changeBallOn(ballOnNumber + 1) }>Ball On</button>
         </div>
       </section>
     </div>
