@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const BottomRow = ({ quarterNumber, downNumber }) => {
+const BottomRow = ({ quarterNumber, downNumber, toGoNumber, ballOnNumber }) => {
 
   // generic variable for quarter till figure out how to pass state
   return (
@@ -12,11 +12,11 @@ const BottomRow = ({ quarterNumber, downNumber }) => {
       </div>
       <div className="toGo">
         <h3 className="toGo__title">To Go</h3>
-        <div className="toGo__value">7</div>
+        <div className="toGo__value">{ toGoNumber }</div>
       </div>
       <div className="ballOn">
         <h3 className="ballOn__title">Ball on</h3>
-        <div className="ballOn__value">21</div>
+        <div className="ballOn__value">{ ballOnNumber }</div>
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
