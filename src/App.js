@@ -7,6 +7,7 @@ function App() {
   // Home and Away Team useState variables
   const [steelersScore, awayTeam] = useState(0);
   const [brownsScore, homeTeam] = useState(0);
+  const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore));
 
   // Setting up more button functionality for the quarter
   const [quarterNumber, changeQuarter] = useState(1);
@@ -46,8 +47,7 @@ function App() {
           <button onClick={() => awayTeam(steelersScore + 3) } className="awayButtons__fieldGoal">Away Field Goal</button>
         </div>
         <div className="otherButtons">
-          <button className="newGame" onClick={() => awayTeam(steelersScore - steelersScore) + homeTeam(brownsScore - brownsScore) }
-          >New Game</button>
+          <button className="newGame" onClick={() => resetScore() }>New Game</button>
           <button className="newQuarter" onClick={() => changeQuarter(quarterNumber + 1) }>Quarter</button>
         </div>
       </section>
