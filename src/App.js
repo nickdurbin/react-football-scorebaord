@@ -6,7 +6,7 @@ function App() {
   // Home and Away Team useState variables
   const [steelersScore, awayTeam] = useState(0);
   const [brownsScore, homeTeam] = useState(0);
-  const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore));
+  const resetScore = () => (homeTeam(brownsScore - brownsScore) + awayTeam(steelersScore - steelersScore)+ changeDown(downNumber - downNumber + 1) + changeQuarter(quarterNumber - quarterNumber + 1));
 
   // // Setting up more button functionality for the quarter and down
   const [quarterNumber, changeQuarter] = useState(1);
@@ -35,7 +35,7 @@ function App() {
             <div className="away__score">{ steelersScore }</div>
           </div>
         </div>
-        <BottomRow quarterNumber='1' downNumber='1' />
+        <BottomRow quarterNumber={quarterNumber} downNumber={downNumber} />
       </section>
       <section className="buttons">
         <div className="homeButtons">
