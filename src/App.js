@@ -4,16 +4,17 @@ import BottomRow from "./BottomRow";
 
 function App() {
   // Home and Away Team useState variables
+  const [score, setScore] = useState({awayScore: 0, homeScore: 0});
   const [awayScore, setAwayScore] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
-  const resetScore = () => (setHomeScore(homeScore - homeScore) + setAwayScore(awayScore - awayScore) + setDown(down - down + 1) + setQuarter(quarter - quarter + 1) + setToGo(toGo - toGo + 10) + setBallOn(ballOn - ballOn + 20) + setTime(time + -time + 1500));
+  const resetScore = () => (setHomeScore(0) + setAwayScore(0) + setDown(1) + setQuarter(1) + setToGo(10) + setBallOn(20) + setTime(1500));
 
-  // // Setting up more button functionality for the BottowRow components
+  // // Setting up more button functionality for the BottomRow components
   const [quarter, setQuarter] = useState(1);
   const [down, setDown] = useState(1);
   const [toGo, setToGo] = useState(10);
   const [ballOn, setBallOn] = useState(20);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(1500);
 
   // Hook for the timer
   useEffect(() => {
@@ -56,7 +57,7 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
-          <button onClick={() => setHomeScore(homeScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
+          <button onClick={() => setScore(score.homeScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
           <button onClick={() => setHomeScore(homeScore + 3) } className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
