@@ -7,14 +7,14 @@ function App() {
   const [score, setScore] = useState({awayScore: 0, homeScore: 0});
   const [awayScore, setAwayScore] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
-  const resetScore = () => (setHomeScore(0) + setAwayScore(0) + setDown(1) + setQuarter(1) + setToGo(10) + setBallOn(20) + setTime(1500));
+  const resetScore = () => (setHomeScore(0) + setAwayScore(0) + setDown(1) + setQuarter(1) + setToGo(10) + setBallOn(20) + setTime(15*60));
 
   // // Setting up more button functionality for the BottomRow components
   const [quarter, setQuarter] = useState(1);
   const [down, setDown] = useState(1);
   const [toGo, setToGo] = useState(10);
   const [ballOn, setBallOn] = useState(20);
-  const [time, setTime] = useState(1500);
+  const [time, setTime] = useState(15*60);
 
   // Hook for the timer
   useEffect(() => {
@@ -29,6 +29,13 @@ function App() {
       window.clearInterval(timer);
     };
   }, []);
+
+  useEffect(()  => {
+    if(time < 1) {
+      setTime(15*60)
+      setQuarter(quarter + 1);
+    }
+  }, [time]);
 
   // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
@@ -47,7 +54,7 @@ function App() {
             <h2 className="home__name">Browns</h2>
             <div className="home__score">{ homeScore }</div>
           </div>
-          <div className="timer">{ time }</div>
+          <div className="timer">{`${(Math.floor(time/60)).toString().padStart(2, '0')}:${(time%60).toString().padStart(2, '0')}`}</div>
           <div className="away">
             <h2 className="away__name">Steelers</h2>
             <div className="away__score">{ awayScore }</div>
@@ -66,7 +73,7 @@ function App() {
         </div>
         <div className="otherButtons">
           <button className="newGame" onClick={() => resetScore() }>New Game</button>
-          <button className="newTime" onClick={() => setTime(time + 1000) }>Clock</button>
+          <button className="newTime" onClick={() => setTime(time + 15*60) }>Clock</button>
           <button className="newQuarter" onClick={() => setQuarter(quarter + 1) }>Quarter</button>
           <button className="newDown" onClick={() => setDown(down+ 1) }>Down</button>
           <button className="toGo" onClick={() => setToGo(toGo + 1) }>To Go</button>
