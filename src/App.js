@@ -14,7 +14,7 @@ function App() {
   const [down, setDown] = useState(1);
   const [toGo, setToGo] = useState(10);
   const [ballOn, setBallOn] = useState(20);
-  const [time, setTime] = useState(15*60);
+  const [time, setTime] = useState(15);
 
   // Hook for the timer
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
       setTime(15*60)
       setQuarter(quarter + 1);
     }
-  }, [time]);
+  }, [time, quarter]);
 
   // Require and style the background image
   const brownsImg = require('../src/Browns.jpg');
@@ -64,7 +64,7 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
-          <button onClick={() => setScore(score.homeScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
+          <button onClick={() => setHomeScore(homeScore + 7) } className="homeButtons__touchdown">Home Touchdown</button>
           <button onClick={() => setHomeScore(homeScore + 3) } className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
